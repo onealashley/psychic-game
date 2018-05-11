@@ -1,3 +1,15 @@
+    
+    
+    function reset() {
+        computerChoice = letters[Math.floor(Math.random() * letters.length)];
+        guesses = 10;
+        guessesSoFar = [];
+        document.getElementById("guessed").innerHTML = "Guessed so far:";
+        document.getElementById("guesses").innerHTML = "Guesses left: 10";
+    }
+    
+    
+    
     var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     var win = 0;
     var losses = 0;
@@ -17,12 +29,7 @@
             document.getElementById("wins").innerHTML = "Wins: " + win;
             swal("You Win", "The Letter was " + computerChoice, "success", {
                 button:"High Five!!",});
-            computerChoice = letters[Math.floor(Math.random() * letters.length)];
-            guesses = 10;
-            guessesSoFar = [];
-            document.getElementById("guessed").innerHTML = "Guessed so far:";
-            document.getElementById("guesses").innerHTML = "Guesses left: 10";
-            
+            reset();            
 
         } else {
             guesses = guesses - 1;
@@ -37,11 +44,7 @@
             swal("You Lose", "The Letter Was " + computerChoice, "warning", {
                 button:"Try Again :("
             });
-            computerChoice = letters[Math.floor(Math.random() * letters.length)];
-            guesses = 10;
-            guessesSoFar = [];
-            document.getElementById("guessed").innerHTML = "Guessed so far:";
-            document.getElementById("guesses").innerHTML = "Guesses left: 10";            
+            reset();           
         }
-    }
+    } 
 
