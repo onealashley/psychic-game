@@ -2,6 +2,7 @@
     
     function reset() {
         computerChoice = letters[Math.floor(Math.random() * letters.length)];
+        console.log(computerChoice)
         guesses = 10;
         guessesSoFar = [];
         document.getElementById("guessed").innerHTML = "Guessed so far:";
@@ -19,7 +20,7 @@
     var computerChoice = letters[Math.floor(Math.random() * letters.length)];
     console.log(computerChoice);
 
-
+    function start() {
     document.onkeyup = function(event) {
         var userGuess = event.key;
         guessesSoFar[guessesSoFar.length]=userGuess;
@@ -29,7 +30,7 @@
             document.getElementById("wins").innerHTML = "Wins: " + win;
             swal("You Win", "The Letter was " + computerChoice, "success", {
                 button:"High Five!!",});
-            reset();            
+                 
 
         } else {
             guesses = guesses - 1;
@@ -44,7 +45,9 @@
             swal("You Lose", "The Letter Was " + computerChoice, "warning", {
                 button:"Try Again :("
             });
-            reset();           
+                             
         }
-    } 
 
+    } }
+    
+        

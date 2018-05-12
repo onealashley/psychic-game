@@ -2,6 +2,7 @@
     margin: auto;
     width: 65%;
     padding: 20px;
+    padding-top: 0px;
 }
 
 .content h3 {
@@ -18,5 +19,9 @@
 
 img {
     width: 100%;
+}
+
+.buttons{
+    text-align: center;
 }
 
